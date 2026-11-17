@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SARV HABIT — Asoschi Sarvinoz uchun Maxsus Odatlar Platformasi</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-lavender-mesh">
+  <!-- Ethereal Lavender Background Decor -->
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-bokeh bokeh-1"></div>
+    <div class="ambient-bokeh bokeh-2"></div>
+  </div>
+
+  <!-- Main Floating Application Window -->
+  <div class="app-window" id="appWindow">
+    
+    <!-- Left Navigation Sidebar -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="brand-container">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="#8997ef" stroke-width="2.5" stroke-dasharray="75 18" />
+            <path d="M11 16C11 13.2 13.2 11 16 11C18.8 11 21 13.2 21 16" stroke="#8997ef" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="16" cy="16" r="2.5" fill="#8997ef"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Habify</span>
+          <span class="brand-sub">SARV HABIT</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-view="dashboard">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect>
+          </svg>
+          <span data-i18n="nav_dashboard">Bosh sahifa</span>
+        </button>
+
+        <button class="nav-item" data-view="habits">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span data-i18n="nav_habits">Odatlar</span>
+        </button>
+
+        <button class="nav-item" data-view="timer">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span data-i18n="nav_timer">Fokus Taymer</span>
+        </button>
+
+        <button class="nav-item" data-view="analytics">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span data-i18n="nav_progress">Tahlil va Xarita</span>
+        </button>
+
+        <button class="nav-item" data-view="calendar">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span data-i18n="nav_calendar">Taqvim</span>
+        </button>
+
+        <button class="nav-item" data-view="journey">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"></path><path d="M14 14.66V17c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-2.34"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+          </svg>
+          <span data-i18n="nav_journey">Rivojlanish va Yutuqlar</span>
+        </button>
+
+        <button class="nav-item" data-view="notes">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line>
+          </svg>
+          <span data-i18n="nav_notes">Haftalik Mulohaza</span>
+        </button>
+
+        <button class="nav-item" data-view="mood">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><circle cx="9" cy="9" r="1" fill="currentColor"></circle><circle cx="15" cy="9" r="1" fill="currentColor"></circle>
+          </svg>
+          <span data-i18n="nav_mood">Kayfiyat</span>
+        </button>
+
+        <button class="nav-item" data-view="ai">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span data-i18n="nav_ai">AI Murabbiy</span>
+        </button>
+
+        <button class="nav-item" data-view="settings">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          <span data-i18n="nav_settings">Sozlamalar</span>
+        </button>
+      </nav>
+
+      <!-- Sidebar Streak Card -->
+      <div class="sidebar-streak-card">
+        <div class="streak-icon-wrap"><span class="streak-flame">✨</span></div>
+        <div class="streak-info">
+          <span class="streak-label" data-i18n="sidebar_streak_label">Davomiylik (Streak)</span>
+          <span class="streak-count" id="sidebarStreakText">12 Kun</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- Top Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="greeting-wrap">
+            <div class="greeting-row">
+              <h1 class="greeting-heading" id="userGreeting">Xayrli tong, Sarvinoz!</h1>
+              <span class="founder-badge" id="founderBadge" title="SARV HABIT Asoschisi">👑 Asoschi</span>
+            </div>
+            <p class="greeting-subtitle" id="greetingDate">Bugun, 17-Noyabr, 2026</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- + Add habit capsule button -->
+          <button class="btn-add-habit" id="openAddHabitBtn">
+            <svg class="plus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span data-i18n="add_habit_btn">+ Odat qo'shish</span>
+          </button>
+
+          <!-- Founder Sarvinoz's Portrait Avatar -->
+          <div class="user-avatar-btn" id="openProfileBtn" title="Sarvinoz — Profil va Asoschi Ma'lumotlari">
+            <img src="./sarvinoz.jpg" alt="Sarvinoz" id="userAvatarImg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'">
+            <span class="avatar-status-dot"></span>
+          </div>
+
+          <!-- Language Selector -->
+          <div class="dropdown-wrapper">
+            <button class="header-icon-btn lang-toggle-btn" id="langToggleBtn" title="Tilni almashtirish">
+              <span id="currentLangBadge">UZ</span>
+            </button>
+            <div class="custom-dropdown-menu" id="langDropdown">
+              <button class="dropdown-option" data-lang="uz"><span>🇺🇿</span> O'zbekcha</button>
+              <button class="dropdown-option" data-lang="en"><span>🇬🇧</span> English</button>
+              <button class="dropdown-option" data-lang="ru"><span>🇷🇺</span> Русский</button>
+            </div>
+          </div>
+
+          <!-- Theme Toggle (Light / Dark) -->
+          <button class="header-icon-btn theme-toggle-btn" id="themeToggleBtn" title="Mavzuni o'zgartirish">
+            <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+            <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <!-- Quick Notification Bell -->
+          <button class="header-icon-btn notif-btn" id="quickNotifBtn" title="Bildirishnomalar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="notif-pulse"></span>
+          </button>
+
+          <!-- User Switcher -->
+          <button class="header-icon-btn logout-btn" id="authBtn" title="Profilni boshqarish">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- ================= 1. DASHBOARD VIEW (Reference Matching) ================= -->
+      <section class="view-section active" id="viewDashboard">
+        
+        <!-- Daily Focus Banner -->
+        <div class="daily-focus-card bento-card">
+          <div class="daily-focus-left">
+            <div class="focus-star-icon">🌟</div>
+            <div class="focus-text-wrap">
+              <span class="focus-tag" data-i18n="daily_focus_tag">BUGUNGI ASOSIY FOKUS</span>
+              <p class="focus-intention" id="dailyFocusIntention">"10 000 qadam yurish, to'yib suv ichish va diqqatni jamlash"</p>
+            </div>
+          </div>
+          <div class="daily-focus-right">
+            <button class="btn-focus-action" id="btnToggleDailyFocus">
+              <span id="focusCheckIcon">✓</span>
+              <span id="focusActionText" data-i18n="btn_mark_focused">Bajarildi</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="bento-top-row">
+          
+          <!-- Card 1: DAILY BALANCE (Concentric Rings + Botanical Bloom) -->
+          <div class="bento-card card-daily-balance">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg class="card-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <h3 class="card-title" data-i18n="card_daily_balance">KUNLIK BALANS</h3>
+              </div>
+              <button class="pill-select-btn" id="balanceFilterBtn">
+                <span id="balanceFilterLabel" data-i18n="filter_today">Bugun</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </div>
+
+            <div class="balance-chart-container">
+              <svg class="concentric-ring-svg" viewBox="0 0 280 280">
+                <defs>
+                  <linearGradient id="mindGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f8a5c2"/><stop offset="100%" stop-color="#ea77b1"/>
+                  </linearGradient>
+                  <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#67e8f9"/><stop offset="100%" stop-color="#38bdf8"/>
+                  </linearGradient>
+                  <linearGradient id="energyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#818cf8"/>
+                  </linearGradient>
+                  <filter id="flowerGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#8a98f8" flood-opacity="0.35"/>
+                  </filter>
+                </defs>
+
+                <!-- Concentric Background Tracks -->
+                <circle cx="140" cy="140" r="118" class="ring-bg-track" />
+                <circle cx="140" cy="140" r="108" class="ring-bg-track" />
+                <circle cx="140" cy="140" r="98" class="ring-bg-track" />
+                <circle cx="140" cy="140" r="88" class="ring-bg-track" />
+                <circle cx="140" cy="140" r="78" class="ring-bg-track" />
+
+                <!-- Progress Ring Arcs -->
+                <circle id="mindRingTrack" cx="140" cy="140" r="112" class="ring-progress ring-mind" stroke-dasharray="703" stroke-dashoffset="422" stroke="url(#mindGrad)" />
+                <circle id="bodyRingTrack" cx="140" cy="140" r="94" class="ring-progress ring-body" stroke-dasharray="590" stroke-dashoffset="413" stroke="url(#bodyGrad)" />
+                <circle id="energyRingTrack" cx="140" cy="140" r="76" class="ring-progress ring-energy" stroke-dasharray="477" stroke-dashoffset="334" stroke="url(#energyGrad)" />
+
+                <!-- Center Lavender Botanical Bloom Art -->
+                <g class="center-flower-group" filter="url(#flowerGlow)">
+                  <path d="M140 140 C130 115 132 94 140 85 C148 94 150 115 140 140 Z" fill="url(#energyGrad)" opacity="0.92"/>
+                  <path d="M140 140 C158 123 176 122 186 129 C184 141 167 151 140 140 Z" fill="url(#energyGrad)" opacity="0.9"/>
+                  <path d="M140 140 C162 148 171 168 168 178 C155 178 144 163 140 140 Z" fill="url(#energyGrad)" opacity="0.92"/>
+                  <path d="M140 140 C136 163 125 178 112 178 C109 168 118 148 140 140 Z" fill="url(#energyGrad)" opacity="0.9"/>
+                  <path d="M140 140 C113 151 96 141 94 129 C104 122 122 123 140 140 Z" fill="url(#energyGrad)" opacity="0.92"/>
+                  <path d="M140 140 L140 95" stroke="#ffffff" stroke-width="1.2" opacity="0.75"/>
+                  <path d="M140 140 L175 131" stroke="#ffffff" stroke-width="1.2" opacity="0.75"/>
+                  <path d="M140 140 L161 170" stroke="#ffffff" stroke-width="1.2" opacity="0.75"/>
+                  <path d="M140 140 L119 170" stroke="#ffffff" stroke-width="1.2" opacity="0.75"/>
+                  <path d="M140 140 L105 131" stroke="#ffffff" stroke-width="1.2" opacity="0.75"/>
+                  <circle cx="140" cy="140" r="5" fill="#fdf4ff"/>
+                  <circle cx="140" cy="140" r="2.5" fill="#818cf8"/>
+                </g>
+              </svg>
+
+              <!-- Floating Badges -->
+              <div class="ring-badge badge-mind" id="badgeMind">
+                <span class="badge-dot dot-mind"></span>
+                <span data-i18n="badge_mind">Aql</span> – <strong id="valMind">40%</strong>
+              </div>
+              <div class="ring-badge badge-body" id="badgeBody">
+                <span class="badge-dot dot-body"></span>
+                <span data-i18n="badge_body">Tana</span> – <strong id="valBody">30%</strong>
+              </div>
+              <div class="ring-badge badge-energy" id="badgeEnergy">
+                <span class="badge-dot dot-energy"></span>
+                <span data-i18n="badge_energy">Energiya</span> – <strong id="valEnergy">30%</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: TODAY'S GOALS -->
+          <div class="bento-card card-todays-goals">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg class="card-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                <h3 class="card-title" data-i18n="card_todays_goals">BUGUNGI MAQSADLAR</h3>
+              </div>
+              <span class="goals-counter-badge" id="goalsCounter">5 / 7</span>
+            </div>
+
+            <!-- Dynamic Habit Checklist Items -->
+            <div class="goals-list-container" id="todaysGoalsList"></div>
+
+            <!-- Unlock Reward Frosted Button -->
+            <button class="btn-unlock-reward" id="unlockRewardBtn">
+              <span class="btn-sparkle">✨</span>
+              <span data-i18n="btn_unlock_reward">Mukofotni ochish</span>
+            </button>
+          </div>
+
+          <!-- Card 3: CALENDAR (Real Current Month & Day) -->
+          <div class="bento-card card-mini-calendar">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg class="card-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <h3 class="card-title" data-i18n="card_calendar">TAQVIM</h3>
+              </div>
+            </div>
+
+            <div class="mini-calendar-nav">
+              <button class="cal-nav-arrow" id="calPrevMonth" aria-label="Oldingi oy">
+                <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <span class="cal-month-title" id="calCurrentMonth">Noyabr 2026</span>
+              <button class="cal-nav-arrow" id="calNextMonth" aria-label="Keyingi oy">
+                <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+
+            <div class="cal-weekdays-row" id="calWeekdaysRow">
+              <span>Ya</span><span>Du</span><span>Se</span><span>Ch</span><span>Pa</span><span>Ju</span><span>Sh</span>
+            </div>
+
+            <div class="cal-days-grid" id="miniCalGrid"></div>
+          </div>
+        </div>
+
+        <!-- Bento Grid Bottom Row (4 Cards) -->
+        <div class="bento-bottom-row">
+          <!-- Card 4: ACTIVITY -->
+          <div class="bento-card card-activity">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg class="card-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                <h3 class="card-title" data-i18n="card_activity">FAOLIK</h3>
+              </div>
+              <button class="mini-plus-btn" id="quickAddActivityBtn" title="Qadam qo'shish">+</button>
+            </div>
+            <div class="card-metric-block">
+              <div class="metric-number-row"><span class="metric-main-val" id="activityStepsVal">8 567</span></div>
+              <span class="metric-unit-label" data-i18n="label_steps">qadam</span>
+            </div>
+            <div class="activity-progress-wrap">
+              <div class="activity-progress-track">
+                <div class="activity-progress-fill" id="activityProgressFill" style="width: 85%;"></div>
+                <div class="activity-progress-knob" style="left: 85%;"></div>
+              </div>
+            </div>
+            <div class="card-trend-footer">
+              <span class="trend-text" id="activityTrendText">
+                <span data-i18n="trend_label">Trend:</span> <strong>+15% kechagiga nisbatan</strong>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 5: WATER RATE -->
+          <div class="bento-card card-water-rate">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg class="card-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                <h3 class="card-title" data-i18n="card_water_rate">SUV ME'YORI</h3>
+              </div>
+              <button class="mini-plus-btn" id="quickAddWaterBtn" title="Stakan qo'shish">+</button>
+            </div>
+            <div class="water-orb-container">
+              <div class="water-orb-circle">
+                <div class="water-wave-layer wave-1" id="waterWave1"></div>
+                <div class="water-wave-layer wave-2" id="waterWave2"></div>
+                <div class="water-orb-shine"></div>
+              </div>
+            </div>
+            <div class="water-stats-row">
+              <div class="stat-col">
+                <span class="stat-col-label" data-i18n="label_glasses">Stakanlar:</span>
+                <span class="stat-col-val" id="waterGlassesVal">6 / 10</span>
+              </div>
+              <div class="stat-col">
+                <span class="stat-col-label" data-i18n="label_streaks">Davomiylik:</span>
+                <span class="stat-col-val" id="waterStreaksVal">10 kun</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: MEDITATION -->
+          <div class="bento-card card-meditation">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg class="card-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+                <h3 class="card-title" data-i18n="card_meditation">MEDITATSIYA</h3>
+              </div>
+              <button class="mini-plus-btn" id="quickAddMeditationBtn" title="Vaqt kiritish">+</button>
+            </div>
+            <div class="meditation-quote-wrap">
+              <p class="meditation-quote" id="meditationQuote">“Bugun men xotirjamlikni tanlayman”</p>
+            </div>
+            <div class="meditation-result-block">
+              <span class="result-label" data-i18n="label_today_result">Bugungi natija:</span>
+              <span class="result-val" id="meditationResultVal">20 daqiqa</span>
+            </div>
+            <!-- Decorative Flower in Bottom Right Corner -->
+            <div class="meditation-corner-flower" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none">
+                <defs>
+                  <linearGradient id="cornerFlowerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#b8c0ff" /><stop offset="60%" stop-color="#7a88ec" /><stop offset="100%" stop-color="#5564d6" />
+                  </linearGradient>
+                </defs>
+                <g opacity="0.92">
+                  <path d="M60 60 C55 35 70 15 85 10 C92 25 80 48 60 60 Z" fill="url(#cornerFlowerGrad)" />
+                  <path d="M60 60 C80 48 105 52 115 65 C102 78 82 72 60 60 Z" fill="url(#cornerFlowerGrad)" />
+                  <path d="M60 60 C80 75 90 95 82 110 C68 105 62 85 60 60 Z" fill="url(#cornerFlowerGrad)" />
+                  <path d="M60 60 C50 82 32 98 18 90 C18 72 38 65 60 60 Z" fill="url(#cornerFlowerGrad)" />
+                  <path d="M60 60 C38 60 18 42 22 25 C38 25 50 42 60 60 Z" fill="url(#cornerFlowerGrad)" />
+                  <circle cx="60" cy="60" r="4" fill="#ffffff" opacity="0.8"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 7: SLEEP QUALITY -->
+          <div class="bento-card card-sleep-quality">
+            <div class="card-header">
+              <div class="card-title-group">
+                <svg class="card-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <h3 class="card-title" data-i18n="card_sleep_quality">UYQU SIFATI</h3>
+              </div>
+              <button class="mini-plus-btn" id="quickAddSleepBtn" title="Uyqu kiritish">+</button>
+            </div>
+            <div class="card-metric-block">
+              <div class="metric-number-row">
+                <span class="metric-main-val" id="sleepHoursVal">7s 20d</span>
+                <span class="metric-target-val">/ 8s</span>
+              </div>
+              <span class="metric-sub-status" id="sleepStatusLabel" data-i18n="label_well_rested">To'yib dam olindi</span>
+            </div>
+            <div class="sleep-interval-pill" id="sleepIntervalPill">23:00 – 06:20</div>
+            <div class="card-trend-footer">
+              <span class="trend-text" id="sleepTrendText">
+                <span data-i18n="trend_label">Trend:</span> <strong>+10% o'tgan haftaga nisbatan</strong>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Habit Heatmap Preview Widget -->
+        <div class="bento-card dashboard-heatmap-card mt-4">
+          <div class="card-header">
+            <div class="card-title-group">
+              <span class="heatmap-icon">🟩</span>
+              <h3 class="card-title" data-i18n="card_heatmap_title">ODATLAR FAOLLIK XARITASI (OXIRGI 60 KUN)</h3>
+            </div>
+            <span class="heatmap-streak-badge" id="heatmapConsistencyBadge">92% Muntazamlik</span>
+          </div>
+          <div class="heatmap-matrix-wrap" id="dashboardHeatmapGrid"></div>
+        </div>
+
+      </section>
+
+      <!-- ================= 2. HABITS MANAGEMENT ================= -->
+      <section class="view-section" id="viewHabits">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="habits_management_title">Odatlar boshqaruvi</h2>
+            <p class="module-desc" data-i18n="habits_management_desc">Kunlik tartibingizni yarating, sozlang va doimiy kuzatib boring.</p>
+          </div>
+          <button class="btn-primary-pill" id="btnCreateHabitFromModule">
+            <span data-i18n="create_habit_action">+ Odat yaratish</span>
+          </button>
+        </div>
+        <div class="filter-pills-row" id="habitsFilterRow">
+          <button class="filter-pill active" data-filter="all" data-i18n="filter_all">Barchasi</button>
+          <button class="filter-pill" data-filter="mind" data-i18n="badge_mind">Aql</button>
+          <button class="filter-pill" data-filter="body" data-i18n="badge_body">Tana</button>
+          <button class="filter-pill" data-filter="energy" data-i18n="badge_energy">Energiya</button>
+          <button class="filter-pill" data-filter="completed" data-i18n="filter_completed">Bajarilganlar</button>
+        </div>
+        <div class="habits-full-grid" id="habitsFullGrid"></div>
+      </section>
+
+      <!-- ================= 3. FOCUS TIMER MODULE ================= -->
+      <section class="view-section" id="viewTimer">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="timer_title">Fokus Taymer & Pomodoro</h2>
+            <p class="module-desc" data-i18n="timer_desc">Chuqur diqqat bilan ishlash va nafas mashqlari uchun maxsus lavanda taymeri.</p>
+          </div>
+        </div>
+
+        <div class="timer-module-grid">
+          <div class="bento-card timer-main-card">
+            <div class="timer-mode-pills">
+              <button class="timer-pill active" data-minutes="25" data-i18n="timer_mode_focus">25 daqiqa Fokus</button>
+              <button class="timer-pill" data-minutes="5" data-i18n="timer_mode_short">5 daqiqa Tanaffus</button>
+              <button class="timer-pill" data-minutes="15" data-i18n="timer_mode_long">15 daqiqa Meditatsiya</button>
+            </div>
+
+            <!-- Animated Breathing Pulse Ring -->
+            <div class="timer-display-wrap">
+              <div class="timer-pulse-ring" id="timerPulseRing"></div>
+              <div class="timer-digits" id="timerDigits">25:00</div>
+              <span class="timer-state-label" id="timerStateLabel" data-i18n="timer_state_ready">Diqqatni jamlang</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="timer-controls-row">
+              <button class="btn-primary-pill timer-btn" id="btnTimerStart">
+                <span id="timerStartText" data-i18n="timer_btn_start">Boshlash</span>
+              </button>
+              <button class="btn-secondary-pill timer-btn" id="btnTimerReset" data-i18n="timer_btn_reset">Qayta o'rnatish</button>
+            </div>
+          </div>
+
+          <div class="bento-card timer-stats-card">
+            <h3 class="card-title" data-i18n="timer_today_title">Bugungi Fokus Statistikasi</h3>
+            <div class="timer-stat-row mt-4">
+              <span data-i18n="timer_sessions_count">Tugallangan seanslar:</span>
+              <strong id="timerSessionsCount">3 ta</strong>
+            </div>
+            <div class="timer-stat-row">
+              <span data-i18n="timer_total_minutes">Umumiy chuqur diqqat vaqti:</span>
+              <strong id="timerTotalMinutes">75 daqiqa</strong>
+            </div>
+            <div class="timer-stat-row">
+              <span data-i18n="timer_xp_earned">Ortirilgan tajriba (XP):</span>
+              <strong class="color-primary">+75 XP ✨</strong>
+            </div>
+            <div class="mindful-quote-box mt-4">
+              <p>“Diqqatingiz qayerda bo'lsa, energiyangiz o'sha yerda gullaydi.”</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4. ANALYTICS & PROGRESS ================= -->
+      <section class="view-section" id="viewAnalytics">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="analytics_title">Statistika va Tahlil</h2>
+            <p class="module-desc" data-i18n="analytics_desc">Odatlar bajarilishi, umumiy progress va davomiylik ko'rsatkichlari.</p>
+          </div>
+          <div class="analytics-time-pills">
+            <button class="pill-btn active" data-period="week" data-i18n="period_week">Shu hafta</button>
+            <button class="pill-btn" data-period="month" data-i18n="period_month">Shu oy</button>
+          </div>
+        </div>
+        <div class="analytics-bento-grid">
+          <div class="bento-card analytics-stat-card">
+            <span class="stat-meta" data-i18n="overall_rate_label">Umumiy bajarilish</span>
+            <h3 class="stat-number" id="analyticsOverallRate">84%</h3>
+            <div class="stat-badge positive" data-i18n="badge_vs_last_week">+8% o'tgan haftaga nisbatan</div>
+          </div>
+          <div class="bento-card analytics-stat-card">
+            <span class="stat-meta" data-i18n="current_streak_label">Joriy davomiylik</span>
+            <h3 class="stat-number" id="analyticsStreakNum">12 Kun</h3>
+            <div class="stat-badge positive" data-i18n="badge_personal_best">Shaxsiy rekord: 24 Kun</div>
+          </div>
+          <div class="bento-card analytics-stat-card">
+            <span class="stat-meta" data-i18n="total_completed_label">Bajarilgan odatlar</span>
+            <h3 class="stat-number" id="analyticsTotalDone">148 ta</h3>
+            <div class="stat-badge neutral" data-i18n="badge_30_days">30 kun davomida</div>
+          </div>
+          <div class="bento-card analytics-stat-card">
+            <span class="stat-meta" data-i18n="balance_score_label">Muvozanat indeksi</span>
+            <h3 class="stat-number" id="analyticsBalanceScore">92 / 100</h3>
+            <div class="stat-badge positive" data-i18n="badge_optimal_harmony">Mukammal uyg'unlik</div>
+          </div>
+        </div>
+        <div class="charts-row">
+          <div class="bento-card chart-large-card">
+            <div class="card-header">
+              <h3 class="card-title" data-i18n="chart_weekly_activity">Haftalik odatlar faolligi</h3>
+              <span class="chart-legend-badge" data-i18n="chart_legend_daily">Kunlik foiz %</span>
+            </div>
+            <div class="bar-chart-wrap" id="analyticsWeeklyChart"></div>
+          </div>
+          <div class="bento-card chart-medium-card">
+            <div class="card-header">
+              <h3 class="card-title" data-i18n="chart_category_split">Yo'nalishlar taqsimoti</h3>
+            </div>
+            <div class="category-breakdown-wrap">
+              <div class="breakdown-item">
+                <div class="breakdown-info"><span data-i18n="badge_mind">Aql</span><strong id="analyticsMindPercent">40%</strong></div>
+                <div class="breakdown-bar"><div class="fill fill-mind" style="width: 40%;"></div></div>
+              </div>
+              <div class="breakdown-item">
+                <div class="breakdown-info"><span data-i18n="badge_body">Tana</span><strong id="analyticsBodyPercent">30%</strong></div>
+                <div class="breakdown-bar"><div class="fill fill-body" style="width: 30%;"></div></div>
+              </div>
+              <div class="breakdown-item">
+                <div class="breakdown-info"><span data-i18n="badge_energy">Energiya</span><strong id="analyticsEnergyPercent">30%</strong></div>
+                <div class="breakdown-bar"><div class="fill fill-energy" style="width: 30%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 5. FULL CALENDAR ================= -->
+      <section class="view-section" id="viewCalendar">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="full_calendar_title">Interaktiv Taqvim</h2>
+            <p class="module-desc" data-i18n="full_calendar_desc">Oylik bajarilish tarixini ko'ring va istalgan kunga bosib ma'lumot oling.</p>
+          </div>
+          <div class="calendar-controls">
+            <button class="cal-nav-arrow" id="fullCalPrev">‹</button>
+            <span class="cal-month-title" id="fullCalMonthYear">Noyabr 2026</span>
+            <button class="cal-nav-arrow" id="fullCalNext">›</button>
+          </div>
+        </div>
+        <div class="bento-card full-calendar-container">
+          <div class="full-cal-weekdays" id="fullCalWeekdaysRow">
+            <span>Yak</span><span>Dush</span><span>Sesh</span><span>Chor</span><span>Pay</span><span>Jum</span><span>Shan</span>
+          </div>
+          <div class="full-cal-grid" id="fullCalendarDaysGrid"></div>
+        </div>
+      </section>
+
+      <!-- ================= 6. PERSONAL GROWTH JOURNEY & ACHIEVEMENTS ================= -->
+      <section class="view-section" id="viewJourney">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="journey_title">Shaxsiy Rivojlanish va Yutuqlar</h2>
+            <p class="module-desc" data-i18n="journey_desc">Har bir bajarilgan odat uchun XP to'plang va yangi cho'qqilarni zabt eting.</p>
+          </div>
+        </div>
+
+        <!-- Level Card -->
+        <div class="bento-card level-card-banner">
+          <div class="level-badge-visual">
+            <span class="level-icon-large">🌸</span>
+            <div class="level-text-info">
+              <span class="level-sub-title" data-i18n="journey_current_level">Joriy Bosqich:</span>
+              <h3 class="level-name-title" id="journeyLevelName">3-Daraja: Gullagan Lavanda</h3>
+              <p class="level-desc-text" data-i18n="journey_level_desc">Siz intizom va xotirjamlikni o'zlashtirdingiz. Keyingi bosqich: "Sarv Daraxti".</p>
+            </div>
+          </div>
+          <div class="level-progress-side">
+            <div class="xp-row">
+              <span data-i18n="journey_total_xp">To'plangan tajriba:</span>
+              <strong id="journeyXpDisplay">850 / 1200 XP</strong>
+            </div>
+            <div class="level-bar-track">
+              <div class="level-bar-fill" id="journeyXpFill" style="width: 71%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievement Badges Grid -->
+        <h3 class="section-subheading mt-4" data-i18n="achievements_heading">Yutuqlar va medallar</h3>
+        <div class="achievements-grid" id="achievementsGrid"></div>
+      </section>
+
+      <!-- ================= 7. WEEKLY REFLECTION & NOTES ================= -->
+      <section class="view-section" id="viewNotes">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="daily_notes_title">Haftalik Mulohaza va Qaydlar</h2>
+            <p class="module-desc" data-i18n="daily_notes_desc">Har haftalik yutuqlaringiz, xulosalaringiz va minnatdorliklaringizni yozib boring.</p>
+          </div>
+          <button class="btn-primary-pill" id="btnWriteNewNote">
+            <span data-i18n="new_note_action">+ Yangi qayd</span>
+          </button>
+        </div>
+
+        <div class="notes-layout-grid">
+          <div class="bento-card note-composer-card">
+            <div class="card-header">
+              <h3 class="card-title" data-i18n="composer_title">Mulohaza yozish</h3>
+              <span class="note-date-tag" id="noteCurrentDateTag">Bugun</span>
+            </div>
+            <input type="text" id="noteTitleInput" class="custom-input" placeholder="Sarlavha (masalan, Haftalik eng katta g'alabam)...">
+            <textarea id="noteContentInput" class="custom-textarea" rows="5" placeholder="Bugun yoki bu hafta o'zingizda qanday ijobiy o'zgarish sezdingiz?"></textarea>
+            <div class="composer-tags-row">
+              <span class="tag-label" data-i18n="note_tag_label">Yo'nalish:</span>
+              <button class="tag-chip active" data-tag="Xotirjamlik">Xotirjamlik</button>
+              <button class="tag-chip" data-tag="Energiya">Energiya</button>
+              <button class="tag-chip" data-tag="Mashg'ulot">Mashg'ulot</button>
+              <button class="tag-chip" data-tag="Minnatdorlik">Minnatdorlik</button>
+            </div>
+            <button class="btn-primary-pill w-full" id="btnSaveNote"><span data-i18n="btn_save_note">Qaydni saqlash</span></button>
+          </div>
+          <div class="notes-feed-container" id="notesFeed"></div>
+        </div>
+      </section>
+
+      <!-- ================= 8. MOOD TRACKER ================= -->
+      <section class="view-section" id="viewMood">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="mood_tracker_title">Kayfiyat va Hayotiylik</h2>
+            <p class="module-desc" data-i18n="mood_tracker_desc">Kayfiyatingizni qayd qiling va qaysi odatlar sizga quvonch keltirishini biling.</p>
+          </div>
+        </div>
+        <div class="mood-module-grid">
+          <div class="bento-card mood-checkin-card">
+            <h3 class="card-title" data-i18n="how_feeling_today">Hozir o'zingizni qanday his qilyapsiz?</h3>
+            <p class="mood-subtitle" data-i18n="select_mood_subtitle">Joriy ruhiy holatingizni tanlang</p>
+            <div class="mood-emojis-row" id="moodEmojiSelector">
+              <button class="mood-choice-btn" data-mood="radiant"><span class="emoji-icon">✨</span><span class="mood-name" data-i18n="mood_radiant">A'lo</span></button>
+              <button class="mood-choice-btn active" data-mood="calm"><span class="emoji-icon">🌸</span><span class="mood-name" data-i18n="mood_calm">Xotirjam</span></button>
+              <button class="mood-choice-btn" data-mood="balanced"><span class="emoji-icon">🌿</span><span class="mood-name" data-i18n="mood_balanced">Muvozanatli</span></button>
+              <button class="mood-choice-btn" data-mood="tired"><span class="emoji-icon">🥱</span><span class="mood-name" data-i18n="mood_tired">Charchagan</span></button>
+              <button class="mood-choice-btn" data-mood="stressed"><span class="emoji-icon">🌧️</span><span class="mood-name" data-i18n="mood_stressed">Zo'riqqan</span></button>
+            </div>
+            <div class="energy-slider-group">
+              <div class="slider-header-row"><span data-i18n="energy_level_label">Energiya darajasi:</span><strong id="energyLevelDisplay">8 / 10</strong></div>
+              <input type="range" min="1" max="10" value="8" class="custom-slider" id="energySlider">
+            </div>
+            <textarea id="moodNoteInput" class="custom-textarea" rows="3" placeholder="Qisqa fikr yoki his-tuyg'ularingizni yozing..."></textarea>
+            <button class="btn-primary-pill w-full" id="btnLogMood"><span data-i18n="log_mood_action">Bugungi kayfiyatni saqlash</span></button>
+          </div>
+          <div class="bento-card mood-history-card">
+            <h3 class="card-title" data-i18n="mood_history_title">So'nggi kayfiyatlar tarixi</h3>
+            <div class="mood-history-list" id="moodHistoryList"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 9. AI HABIT COACH ================= -->
+      <section class="view-section" id="viewAi">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="ai_assistant_title">SARV AI Murabbiyi</h2>
+            <p class="module-desc" data-i18n="ai_assistant_desc">Odatlaringizni tahlil qilib, amaliy tavsiyalar beruvchi aqlli yordamchi.</p>
+          </div>
+          <button class="btn-secondary-pill" id="btnRunAiAudit"><span data-i18n="btn_ai_audit">To'liq odatlar auditini o'tkazish</span></button>
+        </div>
+        <div class="ai-chat-layout">
+          <div class="ai-chips-row">
+            <button class="ai-prompt-chip" data-query="audit" data-i18n="chip_audit">📊 Bu haftadagi muvozanatim qanday?</button>
+            <button class="ai-prompt-chip" data-query="motivation" data-i18n="chip_motivation">✨ Menga ilhom baxsh etuvchi so'z ayt</button>
+            <button class="ai-prompt-chip" data-query="sleep" data-i18n="chip_sleep">🌙 Uyqu sifatini qanday yaxshilash mumkin?</button>
+            <button class="ai-prompt-chip" data-query="newhabit" data-i18n="chip_newhabit">🌱 Samarali ertalabki odat tavsiya qil</button>
+          </div>
+          <div class="bento-card ai-chat-container" id="aiChatBox"></div>
+          <div class="ai-input-bar">
+            <input type="text" id="aiUserInput" class="ai-text-input" placeholder="SARV AI murabbiyidan odatlaringiz haqida so'rang...">
+            <button class="ai-send-btn" id="aiSendBtn" aria-label="Xabar yuborish">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.2" fill="none"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 10. SETTINGS & PROFILE ================= -->
+      <section class="view-section" id="viewSettings">
+        <div class="module-header-row">
+          <div>
+            <h2 class="module-title" data-i18n="settings_title">Profil va Sozlamalar</h2>
+            <p class="module-desc" data-i18n="settings_desc">Foydalanuvchi ma'lumotlari, til, mavzu va kunlik maqsadlarni boshqarish.</p>
+          </div>
+        </div>
+        <div class="settings-grid">
+          <div class="bento-card settings-card">
+            <h3 class="card-title" data-i18n="profile_details_title">Foydalanuvchi profili</h3>
+            <div class="profile-avatar-row">
+              <img src="./sarvinoz.jpg" alt="Sarvinoz" class="settings-avatar-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'">
+              <div class="avatar-controls">
+                <label class="form-label" data-i18n="user_name_label">Ismingiz</label>
+                <input type="text" id="settingUserName" class="custom-input" value="Sarvinoz">
+                <span class="founder-role-tag">SARV HABIT Asoschisi</span>
+              </div>
+            </div>
+            <div class="form-group mt-4">
+              <label class="form-label" data-i18n="daily_mantra_label">Kunlik shior / Bio</label>
+              <input type="text" id="settingUserMantra" class="custom-input" value="Bugun men xotirjamlik va rivojlanishni tanlayman">
+            </div>
+            <button class="btn-primary-pill mt-4" id="btnSaveProfile"><span data-i18n="btn_save_changes">Profilni saqlash</span></button>
+          </div>
+
+          <div class="bento-card settings-card">
+            <h3 class="card-title" data-i18n="daily_targets_title">Kunlik Salomatlik Maqsadlari</h3>
+            <div class="target-field-row"><label data-i18n="target_steps">Kunlik qadamlar maqsadi:</label><input type="number" id="targetStepsInput" class="custom-input target-input" value="10000"></div>
+            <div class="target-field-row"><label data-i18n="target_water">Suv ichish maqsadi (stakan):</label><input type="number" id="targetWaterInput" class="custom-input target-input" value="10"></div>
+            <div class="target-field-row"><label data-i18n="target_sleep">Uyqu vaqti maqsadi (soat):</label><input type="number" id="targetSleepInput" class="custom-input target-input" value="8" step="0.5"></div>
+            <div class="target-field-row"><label data-i18n="target_meditation">Meditatsiya maqsadi (daq):</label><input type="number" id="targetMeditationInput" class="custom-input target-input" value="20"></div>
+            <button class="btn-primary-pill mt-4" id="btnSaveTargets"><span data-i18n="btn_save_targets">Maqsadlarni yangilash</span></button>
+          </div>
+
+          <div class="bento-card settings-card">
+            <h3 class="card-title" data-i18n="app_preferences_title">Ilova Sozlamalari</h3>
+            <div class="pref-row">
+              <div>
+                <span class="pref-title" data-i18n="app_language_label">Til / Language / Язык</span>
+                <span class="pref-desc" data-i18n="app_language_desc">Ilova interfeysi tilini tanlang.</span>
+              </div>
+              <select id="settingsLangSelect" class="custom-select">
+                <option value="uz">O'zbekcha</option>
+                <option value="en">English (UK)</option>
+                <option value="ru">Русский</option>
+              </select>
+            </div>
+            <div class="pref-row mt-4">
+              <div>
+                <span class="pref-title" data-i18n="theme_mode_label">Mavzu ko'rinishi</span>
+                <span class="pref-desc" data-i18n="theme_mode_desc">Yorug' va qorong'u (tungi) rejim o'rtasida almashish.</span>
+              </div>
+              <button class="pill-select-btn" id="btnToggleThemeSettings"><span id="themeSettingsLabel">Yorug' Rejim</span></button>
+            </div>
+          </div>
+
+          <div class="bento-card settings-card">
+            <h3 class="card-title" data-i18n="data_management_title">Ma'lumotlar va Xavfsizlik</h3>
+            <p class="pref-desc" data-i18n="data_management_desc">Barcha ma'lumotlar faqat sizning brauzeringizda xavfsiz saqlanadi.</p>
+            <div class="data-actions-row mt-4">
+              <button class="btn-secondary-pill" id="btnExportData" data-i18n="btn_export_json">Eksport (JSON)</button>
+              <button class="btn-secondary-pill" id="btnImportDataTrigger" data-i18n="btn_import_json">Import qilish</button>
+              <input type="file" id="importFileInput" accept=".json" style="display: none;">
+              <button class="btn-danger-pill" id="btnResetData" data-i18n="btn_reset_defaults">Boshlang'ich holatga qaytarish</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODALS -->
+  <!-- 1. Add/Edit Habit Modal -->
+  <div class="modal-overlay" id="habitModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title" id="habitModalTitle" data-i18n="modal_add_habit_title">Yangi odat qo'shish</h3>
+        <button class="modal-close-btn" id="closeHabitModalBtn">&times;</button>
+      </div>
+      <form id="habitForm" class="modal-body">
+        <input type="hidden" id="habitIdInput">
+        <div class="form-group">
+          <label class="form-label" data-i18n="habit_name_label">Odat nomi *</label>
+          <input type="text" id="habitNameInput" class="custom-input" placeholder="masalan, 15 daqiqa yoga" required>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" data-i18n="habit_pillar_label">Yo'nalish / Kategoriya</label>
+            <select id="habitPillarInput" class="custom-select">
+              <option value="mind" data-i18n="badge_mind">Aql</option>
+              <option value="body" data-i18n="badge_body">Tana</option>
+              <option value="energy" data-i18n="badge_energy">Energiya</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="habit_frequency_label">Takroriylik</label>
+            <select id="habitFrequencyInput" class="custom-select">
+              <option value="daily" data-i18n="freq_daily">Har kuni</option>
+              <option value="weekdays" data-i18n="freq_weekdays">Ish kunlari</option>
+              <option value="weekends" data-i18n="freq_weekends">Dam olish kunlari</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" data-i18n="habit_icon_label">Belgi</label>
+            <select id="habitIconInput" class="custom-select">
+              <option value="lotus">🌸 Lotus</option>
+              <option value="water">💧 Suv</option>
+              <option value="running">🏃 Harakat</option>
+              <option value="food">🥗 Taom</option>
+              <option value="sleep">🌙 Uyqu</option>
+              <option value="sparkle">✨ Fokus</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="habit_time_label">Qulay vaqt</label>
+            <select id="habitTimeOfDayInput" class="custom-select">
+              <option value="morning" data-i18n="time_morning">Ertalab</option>
+              <option value="afternoon" data-i18n="time_afternoon">Tushdan keyin</option>
+              <option value="evening" data-i18n="time_evening">Kechqurun</option>
+              <option value="anytime" data-i18n="time_anytime">Ixtiyoriy vaqt</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary-pill" id="cancelHabitModalBtn" data-i18n="btn_cancel">Bekor qilish</button>
+          <button type="submit" class="btn-primary-pill" id="saveHabitSubmitBtn" data-i18n="btn_save_habit">Saqlash</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Quick Log Modal -->
+  <div class="modal-overlay" id="quickLogModal">
+    <div class="modal-window quick-log-window">
+      <div class="modal-header">
+        <h3 class="modal-title" id="quickLogTitle">Ko'rsatkichni kiritish</h3>
+        <button class="modal-close-btn" id="closeQuickLogModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" id="quickLogBody"></div>
+    </div>
+  </div>
+
+  <!-- 3. Reward Unlock Modal -->
+  <div class="modal-overlay" id="rewardModal">
+    <div class="modal-window reward-window">
+      <div class="reward-animation-wrap"><span class="trophy-emoji">🏆</span></div>
+      <h3 class="reward-title" data-i18n="reward_congrats_title">Tabriklaymiz, Sarvinoz!</h3>
+      <p class="reward-message" id="rewardMessageText">
+        Bugungi barcha maqsadlaringiz muvaffaqiyatli bajarildi! Aql, Tana va Energiya uyg'unlikka erishdi.
+      </p>
+      <div class="reward-points-badge">+50 Mindful XP ✨</div>
+      <button class="btn-primary-pill mt-4 w-full" id="closeRewardModalBtn" data-i18n="btn_awesome">Olg'a davom etamiz</button>
+    </div>
+  </div>
+
+  <!-- 4. Auth & Profile Modal -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-window auth-window">
+      <div class="modal-header">
+        <h3 class="modal-title" data-i18n="auth_modal_title">Asoschi va Profillar</h3>
+        <button class="modal-close-btn" id="closeAuthModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="founder-card-modal">
+          <img src="./sarvinoz.jpg" alt="Sarvinoz" class="modal-founder-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'">
+          <div class="modal-founder-info">
+            <h4>Sarvinoz (Sarah)</h4>
+            <span class="role-tag">👑 SARV HABIT Asoschisi</span>
+            <p>Xush kelibsiz! Ushbu platforma sizning sog'lom va tartibli turmush tarzingiz uchun yaratilgan.</p>
+          </div>
+        </div>
+
+        <div class="profile-choice-list mt-4" id="profileChoiceList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
